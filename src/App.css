@@ -1,7 +1,16 @@
 .App {
   text-align: center;
 }
+.main .container {
+  display:grid;
+  grid-template-columns:1fr 3fr;
 
+}
+.footer{
+  text-align:center;
+  padding:15px;
+  width:100%;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

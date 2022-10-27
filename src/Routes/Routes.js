@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Main from '../Layout/Main';
+import Blog from '../Pages/Blog/Blog';
 import Home from '../Pages/Home/Home';
 import AllCourses from '../Pages/Shared/Courses/AllCourses/AllCourses';
 import SingleCourse from '../Pages/Shared/Courses/AllCourses/SingleCourse/SingleCourse';
@@ -23,6 +24,11 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>,
+                loader: () => fetch('http://localhost:5000/blog')
             },
             {
                 path: '/register',

@@ -1,0 +1,15 @@
+.blogs {
+    padding:50px 10px;
+    width:90%;
+    margin:auto;
+}
+.blog {
+    border:1px solid white;
+    margin:10px 0;
+    padding:10px;
+    border-radius:10px;
+}
+.blog h3 {
+    color:white;
+    font-size:22px;
+}

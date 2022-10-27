@@ -1,14 +1,16 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Authcontext } from '../../../context/AuthContext/AuthContext';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
     const { user, signIn, signInProvider } = useContext(Authcontext);
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const googleProvider = new GoogleAuthProvider();
     const GithubProvider = new GithubAuthProvider();
-
+    const navigate = useNavigate();
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -19,7 +21,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 form.reset();
-                console.log(user);
+                navigate(from, { replace: true });
             }).catch(error => {
                 console.error(error);
             })

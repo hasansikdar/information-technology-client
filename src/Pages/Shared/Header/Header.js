@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaMoon, FaLightbulb } from "react-icons/fa";
+import { Authcontext } from '../../../context/AuthContext/AuthContext';
 
 const Header = () => {
+    const {user, logout} = useContext(Authcontext);
     const [darkmood, setDarkmood] = useState(false);
-
+    
     const handleLight =()=> {
         const light = document.getElementsByTagName('body');
         console.log(light)
@@ -24,9 +26,15 @@ const Header = () => {
             </button>
             <Link className='mx-2' to='/home'>Home </Link>
             <Link to="/faq">FAQ</Link>
-            <Link className='mx-2' to='/login'>Login </Link>
+            {user?.uid ?<>
+                <button onClick={logout} className='mx-2'>Logout </button>
+            </>
+            :
+            <>
+                <Link className='mx-2' to='/login'>Login </Link>
+                <Link className='mx-2' to='/register'>Register </Link>
+            </>}
             <Link to="/courses">Courses</Link>
-            <Link className='mx-2' to='/register'>Register </Link>
             <Link className='mx-2' to='/blog'>Blog </Link>
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle">

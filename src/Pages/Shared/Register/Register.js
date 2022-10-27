@@ -13,6 +13,18 @@ const Register = () => {
                     <div className="card-body">
                         <div className="form-control">
                             <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input type="text" placeholder="Your Name" className="input input-bordered" />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Photo Url</span>
+                            </label>
+                            <input type="text" placeholder="Your Photo Url" className="input input-bordered" />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
                             <input type="text" placeholder="email" className="input input-bordered" />
@@ -23,11 +35,11 @@ const Register = () => {
                             </label>
                             <input type="text" placeholder="password" className="input input-bordered" />
                             <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                <a href="#" className="label-text-alt link link-hover">Eroor Messege</a>
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <button className="btn btn-primary">Register</button>
                         </div>
                         <p>If you have an account please <Link className='link text-blue-600' to='/login'>Login Now</Link></p>
                     </div>

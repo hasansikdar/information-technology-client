@@ -1,15 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaMoon, FaLightbulb } from "react-icons/fa";
 
 const Header = () => {
+    const [darkmood, setDarkmood] = useState(false);
+
+    const handleLight =()=> {
+        const light = document.getElementsByTagName('body');
+        console.log(light)
+    }
     return (
         <div className="navbar bg-base-100">
             <div className="flex-1">
+                <img className='logo' src="https://www.rexburg.org/sites/default/files/styles/gallery500/public/imageattachments/info-tech/page/1061/it_logo_2018.jpg?itok=V2IxZjn8" alt="" />
                 <Link to='/' className="btn btn-ghost normal-case text-xl">Information Technology</Link>
             </div>
             <div className="flex-none">
+            <button onClick={handleLight} className='theme'>
+                 <FaMoon></FaMoon>
+            </button>
+            <button>
+                <FaLightbulb></FaLightbulb>
+            </button>
             <Link className='mx-2' to='/home'>Home </Link>
+            <Link to="/faq">FAQ</Link>
             <Link className='mx-2' to='/login'>Login </Link>
+            <Link to="/courses">Courses</Link>
             <Link className='mx-2' to='/register'>Register </Link>
             <Link className='mx-2' to='/blog'>Blog </Link>
                 <div className="dropdown dropdown-end">

@@ -1,0 +1,22 @@
+.top-banner {
+    padding:50px 0;
+}
+.top-banner .container {
+    width:90%;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+}
+.top-banner-content {
+    width:60%;
+}
+.top-banner-content h1 {
+    font-size:48px;
+    color:white;
+    font-weight:bold;
+    margin:10px 0;
+}
+.top-banner-img img{
+    width:100%;
+}

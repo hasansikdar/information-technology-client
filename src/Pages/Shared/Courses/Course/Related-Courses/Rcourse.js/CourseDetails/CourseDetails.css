@@ -1,0 +1,16 @@
+.course-details {
+    width:90%;
+    margin:auto;
+}
+.course-details .container {
+    display:grid;
+    grid-template-columns: 3fr 1fr;
+}
+.course-details-menu a{
+    margin:10px 15px;
+    display:inline-block;
+
+}
+.course-details-menu {
+    border-bottom:1px solid white;
+}

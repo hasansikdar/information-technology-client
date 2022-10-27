@@ -1,24 +1,22 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Footer from '../Pages/Shared/Footer/Footer';
 import Header from '../Pages/Shared/Header/Header';
+import TopBanner from '../Pages/Shared/Top-banner/TopBanner';
 
 const Main = () => {
     return (
         <div className='main-section'>
             <Header></Header>
+            
             <div className="main">
                 <div className="container">
-                    <div className="left-menu">
-                        <p>Left menu</p>
-                    </div>
                     <div>
                         <Outlet></Outlet>
                     </div>
                 </div>
             </div>
-            <div className='footer'>
-                <p>&copy; Copyright Mohammad Hasan | All right Reserved</p>
-            </div>
+            <Footer></Footer>
         </div>
     );
 };

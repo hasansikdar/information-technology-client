@@ -1,0 +1,57 @@
+.courses-container {
+    display:grid;
+    grid-template-columns:1fr 3fr;
+    width:90%;
+    margin:auto;
+}
+.default-course {
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    width:90%;
+    margin:auto;
+}
+.default-course img {
+    width:100%;
+}
+.courses-header {
+    text-align:Center;
+}
+.courses-header h3 {
+    color:white;
+}
+
+h1 {
+    font-size:48px;
+    color:white;
+    font-weight: bold;
+}
+.all-course {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    width:90%;
+    margin:auto;
+}
+.courses-title {
+    text-align:center;
+    padding:40px 0;
+}
+.course-details-content {
+    padding-top: 30px;
+    padding-right:40px;
+    margin-bottom:20px;
+}
+.active {
+    border-bottom:2px solid green;
+}
+.enroll {
+    padding:10px;
+    border-radius: 5px;
+    margin-bottom:20px;
+    background:black;
+    max-height:530px;
+}
+.enroll-button {
+    text-align:center;
+    margin-top:40px;
+    margin-bottom:15px;
+}

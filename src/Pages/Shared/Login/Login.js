@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Authcontext } from '../../../context/AuthContext/AuthContext';
@@ -6,6 +6,7 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
     const { user, signIn, signInProvider } = useContext(Authcontext);
+    const [error, setError] = useState('');
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
     const googleProvider = new GoogleAuthProvider();
@@ -24,6 +25,7 @@ const Login = () => {
                 navigate(from, { replace: true });
             }).catch(error => {
                 console.error(error);
+                setError(error.messege);
             })
     }
 
@@ -58,6 +60,7 @@ const Login = () => {
                             <input name="password" type="password" placeholder="password" className="input input-bordered" />
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                <a href="#" className="label-text-alt link link-hover">{error}</a>
                             </label>
                         </div>
                         <div className="form-control mt-6">

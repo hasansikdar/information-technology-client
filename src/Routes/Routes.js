@@ -15,6 +15,7 @@ import CourseDetails from '../Pages/Shared/Courses/Course/Related-Courses/Rcours
 import RelatedCourses from '../Pages/Shared/Courses/Course/Related-Courses/RelatedCourses';
 import Courses from '../Pages/Shared/Courses/Courses';
 import Login from '../Pages/Shared/Login/Login';
+import PrivateRoute from '../Pages/Shared/PrivateRoute/PrivateRoute';
 import Register from '../Pages/Shared/Register/Register';
 
 export const router = createBrowserRouter([
@@ -29,7 +30,7 @@ export const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>,
-                loader: () => fetch('http://localhost:5000/blog')
+                loader: () => fetch('https://information-technology-server.vercel.app/blog')
             },
             {
                 path: '/register',
@@ -56,28 +57,28 @@ export const router = createBrowserRouter([
     },
     {
         path: '/course-details/:id',
-        loader: ({params}) => fetch(`http://localhost:5000/course-details/${params.id}`),
+        loader: ({params}) => fetch(`https://information-technology-server.vercel.app/course-details/${params.id}`),
         element: <CourseDetails></CourseDetails>,
         children: [
             {
                 path: '/course-details/:id/',
                 element: <Overview></Overview>,
-                loader: ({params}) => fetch(`http://localhost:5000/course-details/${params.id}`),
+                loader: ({params}) => fetch(`https://information-technology-server.vercel.app/course-details/${params.id}`),
             },
             {
                 path: '/course-details/:id/overview',
                 element: <Overview></Overview>,
-                loader: ({params}) => fetch(`http://localhost:5000/course-details/${params.id}`),
+                loader: ({params}) => fetch(`https://information-technology-server.vercel.app/course-details/${params.id}`),
             },
             {
                 path: '/course-details/:id/instructor',
                 element: <Instructor></Instructor>,
-                loader: ({params}) => fetch(`http://localhost:5000/course-details/${params.id}`),
+                loader: ({params}) => fetch(`https://information-technology-server.vercel.app/course-details/${params.id}`),
             },
             {
                 path: '/course-details/:id/reviews',
                 element: <Reviews></Reviews>,
-                loader: ({params}) => fetch(`http://localhost:5000/course-details/${params.id}`),
+                loader: ({params}) => fetch(`https://information-technology-server.vercel.app/course-details/${params.id}`),
             },
             
         ]
@@ -85,17 +86,17 @@ export const router = createBrowserRouter([
     {
         path:'/courses',
         element:<Courses></Courses>,
-        loader: () => fetch('http://localhost:5000/courses'),
+        loader: () => fetch('https://information-technology-server.vercel.app/courses'),
         children: [
             {
               path: '/courses',
               element:<AllCourses></AllCourses>,
-              loader: () => fetch('http://localhost:5000/courses/')
+              loader: () => fetch('https://information-technology-server.vercel.app/courses/')
             },
             {
                 path: '/courses/:id',
                 element: <SingleCourse></SingleCourse>,
-                loader: ({params})=> fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: ({params})=> fetch(`https://information-technology-server.vercel.app/courses/${params.id}`)
             },
             {
                 path: '/courses/course',

@@ -6,7 +6,7 @@ import { Authcontext } from '../../../context/AuthContext/AuthContext';
 const PrivateRoute = ({children}) => {
     const {user} = useContext(Authcontext);
     let location = useLocation();
-    if(user.uid){
+    if(user?.uid){
         return children;
     }else{
         <Navigate to='/login' state={{ from: location }} replace></Navigate>

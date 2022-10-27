@@ -13,7 +13,7 @@ const SingleCourse = () => {
                     <h2 className="card-title">{course?.name}</h2>
                     <p>{course?.details?.length > 100 ? course?.details.slice(0, 90):course?.details}</p>
                     <div className="card-actions">
-                        <Link to={`/course-details/${course.id}`} className="btn btn-primary">Details</Link>
+                        <Link to={`/course-details/${course.id}`} className="btn btn-primary">Enroll</Link>
                     </div>
                 </div>
             </div>
